@@ -12,8 +12,8 @@ export default function Signin({ providers }) {
           <div key={provider.name} className="flex flex-col items-center">
             <Image
               priority
-              src="/googl.webp"
-              // src="https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw"
+              // src="/googl.webp"
+              src="https://play-lh.googleusercontent.com/1-hPxafOxdYpYZEOKzNIkSP43HXCNftVJVttoo4ucl7rsMASXW3Xr6GlXURCubE1tA=w3840-h2160-rw"
               height={144}
               width={144}
               alt="Google Logo"
