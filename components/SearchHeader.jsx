@@ -39,7 +39,7 @@ const SearchHeader = () => {
             type="text"
             defaultValue={router.query.term}
             ref={searchInputRef}
-            className="w-full focus:outline-none"
+            className="w-full focus:outline-none "
           />
           <XIcon className="h-6 text-gray-50 cursor-pointer " />
           <MicrophoneIcon className="h-6 hidden sm:inline-flex" />
