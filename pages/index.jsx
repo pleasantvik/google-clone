@@ -6,6 +6,7 @@ import { SearchIcon, MicrophoneIcon } from "@heroicons/react/solid";
 import { Footer } from "@/components/Footer";
 import { useRouter } from "next/router";
 import { useRef } from "react";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,16 @@ export default function Home() {
     if (!term.trim()) return;
 
     router.push(`/search?term=${term.trim()}&searchType=`);
+  };
+  const randomSearch = async (e) => {
+    // e.preventDefault();
+
+    const { data } = await axios.get(
+      `https://random-word-api.herokuapp.com/word`
+    );
+    if (!data) return;
+
+    router.push(`/search?term=${data[0]}&searchType=`);
   };
   return (
     <>
@@ -53,7 +64,9 @@ export default function Home() {
           <button className="btn" onClick={handleSearch}>
             Google Search
           </button>
-          <button className="btn">I&apos;m Feeling Lucky</button>
+          <button onClick={() => randomSearch()} className="btn" type="button">
+            I&apos;m Feeling Lucky
+          </button>
         </div>
       </form>
       <Footer />
