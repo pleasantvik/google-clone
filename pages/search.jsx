@@ -1,20 +1,22 @@
 import { resObj } from "@/Response";
 import SearchHeader from "@/components/SearchHeader";
+import SearchResult from "@/components/SearchResult";
 import axios from "axios";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React from "react";
 
 const Search = ({ results }) => {
   console.log(results);
+  const router = useRouter();
   return (
     <div>
       <Head>
-        <title>Search Page</title>
+        <title>{router.query.term} &mdash; Search Page </title>
       </Head>
 
-      {/* search Header */}
       <SearchHeader />
-      {/* Result  */}
+      <SearchResult results={results} />
     </div>
   );
 };
